@@ -9,7 +9,14 @@ const products = {
                 item_id: req.query.item_id
             }
         }).then((result) => {
-            return helper.response('success', res, result, 200, 'show all history product successfully')
+            model.items.findAll({
+                where: {
+                    id: req.query.item_id
+                }
+            }).then((result2) => {
+                return helper.response('success', res, result, 200, result2)
+            })
+            
         }).catch((err) => {
             return helper.response('error', res, null, 401, err)
         })
