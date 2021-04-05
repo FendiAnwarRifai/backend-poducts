@@ -1,5 +1,4 @@
 const model = require('../models/index')
-const { v4: uuidv4 } = require('uuid')
 const Sequelize = require('sequelize')
 const helper = require('../helpers/help')
 const Op = Sequelize.Op
